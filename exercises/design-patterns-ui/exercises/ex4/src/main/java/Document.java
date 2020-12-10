@@ -13,20 +13,25 @@ public class Document {
         parts.add(part);
     }
 
-    public String toHTML() {
-        StringBuffer result = new StringBuffer();
-        for (DocumentPart part: parts) {
-            result.append(part.toHTML());
+    public void accept(DocumentVisitor visitor) {
+        for (DocumentPart part: parts){
+            part.accept(visitor);
         }
-        return result.toString();
     }
-
-    public String toPlainText() {
-        StringBuffer result = new StringBuffer();
-        for (DocumentPart part: parts) {
-            result.append(part.toPlainText());
-        }
-        return result.toString();
-    }
+//    public String toHTML() {
+//        StringBuffer result = new StringBuffer();
+//        for (DocumentPart part: parts) {
+//            result.append(part.toHTML());
+//        }
+//        return result.toString();
+//    }
+//
+//    public String toPlainText() {
+//        StringBuffer result = new StringBuffer();
+//        for (DocumentPart part: parts) {
+//            result.append(part.toPlainText());
+//        }
+//        return result.toString();
+//    }
 
 }

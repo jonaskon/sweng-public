@@ -11,13 +11,18 @@ public class HyperLink extends DocumentPart {
     }
 
     @Override
-    public String toHTML() {
-        return String.format("<a href=\"%s\">%s</a>", URL, getText());
+    public void accept(DocumentVisitor visitor) {
+        visitor.visit(this);
     }
 
-    @Override
-    public String toPlainText() {
-        return String.format("[%s](%s)", getText(), URL);
-    }
+//    @Override
+//    public String toHTML() {
+//        return String.format("<a href=\"%s\">%s</a>", URL, getText());
+//    }
+//
+//    @Override
+//    public String toPlainText() {
+//        return String.format("[%s](%s)", getText(), URL);
+//    }
 
 }

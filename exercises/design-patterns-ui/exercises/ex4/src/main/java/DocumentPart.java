@@ -10,6 +10,5 @@ public abstract class DocumentPart {
         return text;
     }
 
-    public abstract String toHTML();
-    public abstract String toPlainText();
+    public abstract void accept(DocumentVisitor visitor);
 }
