@@ -23,10 +23,10 @@ If you leave any checkbox empty, it means that you did not finish answering the 
 
 Which of these local resources can be transparently replaced by a proxy to a remote resource, using the Proxy design pattern?
 
-- [ ] A "greatest common divisor" algorithm
-- [ ] A connection to the Internet
-- [ ] A webcam
-- [ ] A filesystem
+- [n] A "greatest common divisor" algorithm
+- [y] A connection to the Internet
+- [Y] A webcam
+- [y] A filesystem
 
 
 ---
@@ -35,10 +35,10 @@ Which of these local resources can be transparently replaced by a proxy to a rem
 
 Which of the following are reasons the MVC pattern is not suitable for Android?
 
-- [ ] MVC is only for websites
-- [ ] MVC was not designed with smartphone apps in mind
-- [ ] In Android, only the View can handle inputs
-- [ ] In Android, Controllers cannot call Models
+- [n] MVC is only for websites
+- [N] MVC was not designed with smartphone apps in mind
+- [Y] In Android, only the View can handle inputs
+- [n] In Android, Controllers cannot call Models
 
 
 ---
@@ -49,10 +49,10 @@ Which of the following statements are true?
 
 Automated testing and fuzzing can prove...
 
-- [ ] ... the absence of bugs
-- [ ] ... the presence of bugs
-- [ ] ... that the program satisfies users' needs
-- [ ] ... that the program meets its specification 
+- [n] ... the absence of bugs
+- [y] ... the presence of bugs
+- [n] ... that the program satisfies users' needs
+- [N] ... that the program meets its specification 
 
 
 ---
@@ -65,10 +65,10 @@ In the feedback your app gets on the app store, users request a new feature: to 
 
 Which of the following actions are sensible steps to take on your own?
 
-- [ ] Add the feature request to the Product Backlog during the next Sprint Retrospective
-- [ ] Investigate how feasible the feature is given the current codebase
-- [ ] Ask the Product Owner to set a priority for the feature
-- [ ] Discuss the request at the next Daily Scrum meeting
+- [n] Add the feature request to the Product Backlog during the next Sprint Retrospective
+- [n] Investigate how feasible the feature is given the current codebase
+- [y] Ask the Product Owner to set a priority for the feature
+- [n] Discuss the request at the next Daily Scrum meeting
 
 
 ---
@@ -79,10 +79,10 @@ Which of the following statements are true?
 
 Refactoring code is meant to...
 
-- [ ] ... make code easier to understand
-- [ ] ... fix bugs in the code
-- [ ] ... make writing tests easier
-- [ ] ... reduce the number of lines of code
+- [y] ... make code easier to understand
+- [n] ... fix bugs in the code
+- [y] ... make writing tests easier
+- [n] ... reduce the number of lines of code
 
 
 ---
@@ -94,10 +94,10 @@ Your customers want you to implement a new feature: storing room descriptions as
 
 Which of the following techniques could you use to implement this feature?
 
-- [ ] The Visitor pattern
-- [ ] The Decorator pattern
-- [ ] Polymorphism
-- [ ] Composition
+- [y] The Visitor pattern
+- [n] The Decorator pattern
+- [Y] Polymorphism
+- [n] Composition
 
 
 ---
@@ -113,10 +113,10 @@ Code being code, if Gandhi went democratic his aggression wouldn't go to -1, it 
 
 Which kinds of tests are meant to detect this kind of problem?
 
-- [ ] Unit tests
-- [ ] End-to-end tests
-- [ ] Acceptance tests
-- [ ] Regression tests
+- [y] Unit tests
+- [Y] End-to-end tests
+- [Y] Acceptance tests
+- [n] Regression tests
 
 
 ---
@@ -129,10 +129,10 @@ This was an embarrassment for the city, since the road had already flooded befor
 
 If the flood prevention system was a software system, which kinds of tests are meant to detect this kind of problem?
 
-- [ ] Unit tests
-- [ ] End-to-end tests
-- [ ] Acceptance tests
-- [ ] Regression tests
+- [n] Unit tests
+- [y] End-to-end tests
+- [n] Acceptance tests
+- [Y] Regression tests
 
 
 ---
@@ -141,10 +141,10 @@ If the flood prevention system was a software system, which kinds of tests are m
 
 Which of the following statements are true of the "fake" implementations of dependencies that you use in your tests instead of the real dependencies?
 
-- [ ] They make unit testing easier
-- [ ] They make end-to-end testing easier
-- [ ] They might never exhibit behaviors that real dependencies have
-- [ ] They might exhibit behaviors that real dependencies do not have
+- [Y] They make unit testing easier
+- [N] They make end-to-end testing easier
+- [y] They might never exhibit behaviors that real dependencies have
+- [Y] They might exhibit behaviors that real dependencies do not have
 
 
 ---
@@ -153,10 +153,10 @@ Which of the following statements are true of the "fake" implementations of depe
 
 Which of the following are true of fuzzing?
 
-- [ ] Fuzzing completely at random is a waste of CPU cycles
-- [ ] Most inputs fail to find any bugs
-- [ ] It is best used as a last resort, since results are not guaranteed
-- [ ] It is incompatible with more precise techniques from the formal verification world
+- [Y] Fuzzing completely at random is a waste of CPU cycles
+- [y] Most inputs fail to find any bugs
+- [n] It is best used as a last resort, since results are not guaranteed
+- [n] It is incompatible with more precise techniques from the formal verification world
 
 
 ---
@@ -165,12 +165,12 @@ Which of the following are true of fuzzing?
 
 If a `Tea` is a `Drink`, which of the following statements are true?
 
-- [ ] A `java.util.List<Tea>` is a `java.util.List<Drink>`
-- [ ] A `java.util.List<Drink>` is a `java.util.List<Tea>`
-- [ ] A `java.util.Comparator<Tea>` is a `java.util.Comparator<Drink>`
-- [ ] A `java.util.Comparator<Drink>` is a `java.util.Comparator<Tea>`
-- [ ] A `java.util.Optional<Tea>` is a `java.util.Optional<Drink>`
-- [ ] A `java.util.Optional<Drink>` is a `java.util.Optional<Tea>`
+- [n] A `java.util.List<Tea>` is a `java.util.List<Drink>`
+- [N] A `java.util.List<Drink>` is a `java.util.List<Tea>`
+- [n] A `java.util.Comparator<Tea>` is a `java.util.Comparator<Drink>`
+- [y] A `java.util.Comparator<Drink>` is a `java.util.Comparator<Tea>`
+- [y] A `java.util.Optional<Tea>` is a `java.util.Optional<Drink>`
+- [n] A `java.util.Optional<Drink>` is a `java.util.Optional<Tea>`
 
 
 ---
@@ -186,9 +186,9 @@ They do, however, have plans for a mobile application soon.
 
 Which of the following design decisions are likely to be good ideas?
 
-- [ ] You should make the database classes abstract, so that the system can support different kinds of databases: SQL, NoSQL, graph...
-- [ ] You should avoid patterns such as MVC or MVVM, to minimize the code's complexity and make development faster
-- [ ] The UI for cafeteria owners should use the Factory pattern to allow them to upload menus in different formats
-- [ ] The UI for cafeteria owners should use the Decorator pattern to allow them to fix mistakes in existing menus
-- [ ] The UI for students should use the Singleton pattern to ensure their preferences are applied consistently
-- [ ] The UI for students should use the Decorator pattern to allow them to filter out menus based on their preferences
+- [n] You should make the database classes abstract, so that the system can support different kinds of databases: SQL, NoSQL, graph...
+- [n] You should avoid patterns such as MVC or MVVM, to minimize the code's complexity and make development faster
+- [y] The UI for cafeteria owners should use the Factory pattern to allow them to upload menus in different formats
+- [Y] The UI for cafeteria owners should use the Decorator pattern to allow them to fix mistakes in existing menus
+- [Y] The UI for students should use the Singleton pattern to ensure their preferences are applied consistently
+- [y] The UI for students should use the Decorator pattern to allow them to filter out menus based on their preferences

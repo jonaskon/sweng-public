@@ -7,6 +7,11 @@
 // You CANNOT delete existing methods/constructors
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 final class AppController {
     private final Directory directory;
 
@@ -36,7 +41,49 @@ final class AppController {
      * @throws IllegalArgumentException if and only if the input is null.
      */
     AppView handle(String input) {
-        // TODO
-        throw new UnsupportedOperationException();
+        if (input == null) {
+            throw new IllegalArgumentException("The input cannot be null.");
+        }
+        String[] in = input.trim().split(" ");
+        String cmd = null;
+        AppView res = null;
+        if (in.length == 0) {
+            cmd = "goToMain";
+        }
+        if (in.length != 1) {
+            cmd = in[0];
+        }
+        if (cmd == "goToMain") {
+            res = new AppView("Welcome!", Arrays.asList("show", "search"));
+        } else if (cmd == "show") {
+            StringBuilder searchTerm = new StringBuilder();
+            for (int i=1; i<in.length; ++i) {
+                searchTerm.append(in[i]);
+                searchTerm.append(" ");
+            }
+            List<Person> searchRes = directory.search(searchTerm.toString());
+            String description = "The search did not return exactly one person.";
+            if (searchRes.size() == 1) {
+                description = searchRes.get(0).toString();
+            }
+            res = new AppView(description, Arrays.asList("show", "search"));
+        } else if (cmd == "search") {
+            StringBuilder searchTerm = new StringBuilder();
+            for (int i=1; i<in.length; ++i) {
+                searchTerm.append(in[i]);
+                searchTerm.append(" ");
+            }
+            List<Person> searchRes = directory.search(searchTerm.toString());
+            String description = "The search returned no results.";
+            StringBuilder descriptionBuilder = new StringBuilder();
+            if (!searchRes.isEmpty()) {
+                for (Person pers:searchRes) {
+                    descriptionBuilder.append(pers.name + " ");
+                }
+                description = descriptionBuilder.toString().trim();
+            }
+            res = new AppView(description, Arrays.asList("show", "search"));
+        }
+        return res;
     }
 }

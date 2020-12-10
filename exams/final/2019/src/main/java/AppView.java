@@ -50,7 +50,12 @@ final class AppView {
      */
     @Override
     public String toString() {
-        // TODO
-        throw new UnsupportedOperationException();
+        StringBuilder res = new StringBuilder();
+        res.append(description+'\n');
+        res.append("Available commands:\n");
+        for(String cmd : commands) {
+            res.append("- "+ cmd +"\n");
+        }
+        return res.toString();
     }
 }

@@ -7,8 +7,12 @@
 // You CANNOT delete existing methods/constructors
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Directory with overrides for specific searches; searches are passed through the wrapped Directory,
@@ -17,6 +21,9 @@ import java.util.Map;
  * Name comparisons for the overrides are case-insensitive, and ignore leading and trailing spaces.
  */
 final class OverridableDirectory implements Directory {
+    Map<String, Person> overrides;
+    Directory wrapped;
+
     /**
      * Creates a new OverridableDirectory wrapping the given Directory, with the given overrides.
      *
@@ -26,13 +33,44 @@ final class OverridableDirectory implements Directory {
      *                                  or the overrides map contains multiple keys that are equal given the comparison criteria.
      */
     OverridableDirectory(Directory wrapped, Map<String, Person> overrides) {
-        // TODO
-        throw new UnsupportedOperationException();
+        if (wrapped == null || overrides == null) {
+            throw new IllegalArgumentException("Neither the wrapped directory nor the overrides can be null.");
+        }
+        Set<String> allKeys = new HashSet<>();
+        for (String key:overrides.keySet()) {
+            Person val = overrides.get(key);
+            if (val == null) {
+                throw new IllegalArgumentException("Overrides cannot contain a null value.");
+            }
+            String pKey = key.toLowerCase().trim();
+            if (allKeys.contains(pKey)) {
+                throw new IllegalArgumentException("At least two values specified for key "+key+" in the overrides.");
+            }
+            allKeys.add(pKey);
+        }
+        this.overrides = overrides;
+        this.wrapped = wrapped;
     }
 
     @Override
     public List<Person> search(String name) {
-        // TODO
-        throw new UnsupportedOperationException();
+        if (name == null) {
+            throw new IllegalArgumentException("The provided name cannot be null.");
+        }
+        String searchTerm = name.toLowerCase().trim();
+        if (searchTerm.isEmpty()) {
+            throw new IllegalArgumentException("The provided name cannot be empty or only contain whitespaces.");
+        }
+        List<Person> res = null;
+        for (String key:overrides.keySet()) {
+            if (searchTerm == key.toLowerCase().trim()) {
+                res = new ArrayList<Person>();
+                res.add(overrides.get(key));
+            }
+        }
+        if (res == null) {
+            res = wrapped.search(searchTerm);
+        }
+        return res;
     }
 }

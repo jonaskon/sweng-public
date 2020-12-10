@@ -10,6 +10,7 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Warmup;
 import org.openjdk.jmh.infra.Blackhole;
+import java.util.List;
 
 import java.util.concurrent.TimeUnit;
 
@@ -27,5 +28,16 @@ public class Benchmarking {
         bh.consume(addition); // No dead code
     }
 
+    @Benchmark
+    public void baselineBenchmark(Blackhole bh) {
+        CSVReader reader = new CSVReader("res/students.txt");
+        List<Student> res = reader.read(10);
+        bh.consume(res);
+    }
 
+    @Benchmark
+    public void cachedBenchmark(Blakchole bh) {
+        Cache cache = new Cache()
+
+    }
 }
