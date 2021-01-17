@@ -21,8 +21,8 @@ import java.util.Set;
  * Name comparisons for the overrides are case-insensitive, and ignore leading and trailing spaces.
  */
 final class OverridableDirectory implements Directory {
-    Map<String, Person> overrides;
-    Directory wrapped;
+    private Map<String, Person> overrides;
+    private Directory wrapped;
 
     /**
      * Creates a new OverridableDirectory wrapping the given Directory, with the given overrides.
@@ -69,7 +69,7 @@ final class OverridableDirectory implements Directory {
             }
         }
         if (res == null) {
-            res = wrapped.search(searchTerm);
+            res = wrapped.search(name);
         }
         return res;
     }

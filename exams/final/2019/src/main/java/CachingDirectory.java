@@ -48,7 +48,7 @@ final class CachingDirectory implements Directory {
         }
         List<Person> res = cache.get(searchTerm);
         if (res == null) {
-            res = directory.search(searchTerm);
+            res = directory.search(name);
             cache.put(searchTerm, res);
         }
         return res;

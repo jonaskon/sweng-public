@@ -1,0 +1,37 @@
+Practice Question 1,Practice Question 2,,,,,,Practice Question 3,,,,,,,,,,Practice Question 4,,,,,,,,,,,,,,,,,,,
+"AppView::toString returns the description, then one command per line as per its specification","CachingDirectory's constructor should throw an IllegalArgumentException when given a null Directory","CachingDirectory should return results from the underlying directory","CachingDirectory should return a cached result when searching the same name for the second time","CachingDirectory should ignore leading and trailing whitespace for cache lookups","CachingDirectory should perform case-insensitive cache lookups","CachingDirectory should not modify the name before passing it to the wrapped Directory","OverridableDirectory's constructor should throw an IllegalArgumentException when given a null Directory","OverridableDirectory's constructor should throw an IllegalArgumentException when given a null overrides map","OverridableDirectory's constructor should throw an IllegalArgumentException if the overrides map contains null values","OverridableDirectory's constructor should throw an IllegalArgumentException if the overrides map contains keys considered equal","OverridableDirectory should return results from the underlying directory","OverridableDirectory should use the provided overrides","OverridableDirectory should put the provided overrides at the beginning","OverridableDirectory should ignore leading and trailing whitespace for override lookups","OverridableDirectory should perform case-insensitive override lookups","OverridableDirectory should not modify the name before passing it to the wrapped Directory","AppController::handle should throw an IllegalArgumentException when given a null input","AppController::handle should return null given a known command without text","AppController::handle should return null given an unknown command","AppController::handle should return the correct description for the main view","AppController::handle should return the correct commands for the main view","AppController::handle should ignore leading and trailing spaces for the 'main' view","AppController::handle should pass the text through unmodified for 'search'","AppController::handle should return the correct description when a search returns no results","AppController::handle should return the correct commands when a search returns no results","AppController::handle should return the correct description when a search returns results","AppController::handle should return the correct commands when a search returns results","AppController::handle should pass the text through unmodified for the 'show' view","AppController::handle should return the correct description for the 'show' view when the name is unambiguous and some fields are null","AppController::handle should return the correct description for the 'show' view when the name is unambiguous and no fields are null","AppController::handle should return the correct commands for the 'show' view when the name is unambiguous","AppController::handle should return the correct description for the 'show' view when the directory returns no results","AppController::handle should return the correct commands for the 'show' view when the directory returns no results","AppController::handle should return the correct description for the 'show' view when the directory returns more than one result","AppController::handle should return the correct commands for the 'show' view when the directory returns more than one result","AppController::handle should ignore leading and trailing spaces in the text"
+OK,OK,OK,OK,OK,OK,OK,OK,OK,OK,OK,OK,OK,"Expected: iterable containing [&#60;Ferdinand, Student, 17, Aegir&#62;, &#60;Bernadetta, Student, 17, Varley&#62;]  
+     but: no item was &#60;Bernadetta, Student, 17, Varley&#62;  ","Expected: iterable containing [&#60;Dorothea, Songstress, 18, Enbarr&#62;]  
+     but: no item was &#60;Dorothea, Songstress, 18, Enbarr&#62;  ","Expected: iterable containing [&#60;Hubert, Student, 20, Enbarr&#62;]  
+     but: no item was &#60;Hubert, Student, 20, Enbarr&#62;  ",OK,OK,OK,OK,"[java.lang.NullPointerException]   
+at GradedAppControllerTests.t03_mainViewDescription(GradedAppControllerTests.java:34)  
+  ","[java.lang.NullPointerException]   
+at GradedAppControllerTests.t04_mainViewCommands(GradedAppControllerTests.java:40)  
+  ","[java.lang.NullPointerException]   
+at GradedAppControllerTests.t05_commandWithSpacesWithoutText(GradedAppControllerTests.java:46)  
+  ","Expected: is &#34;Flayn&#34;  
+     but: was &#34;&#34;  ","[java.lang.NullPointerException]   
+at GradedAppControllerTests.t07_searchWithoutResultsHasCorrectText(GradedAppControllerTests.java:65)  
+  ","[java.lang.NullPointerException]   
+at GradedAppControllerTests.t08_searchWithoutResultsHasCorrectCommands(GradedAppControllerTests.java:71)  
+  ","[java.lang.NullPointerException]   
+at GradedAppControllerTests.t09_searchWithResultsHasCorrectText(GradedAppControllerTests.java:82)  
+  ","[java.lang.NullPointerException]   
+at GradedAppControllerTests.t10_searchWithoutResultsHasCorrectCommands(GradedAppControllerTests.java:91)  
+  ","Expected: is &#34;Rhea&#34;  
+     but: was &#34;&#34;  ","[java.lang.NullPointerException]   
+at GradedAppControllerTests.t12_showWithUnambiguousNameHasCorrectTextWhenSomeFieldsAreNull(GradedAppControllerTests.java:111)  
+  ","[java.lang.NullPointerException]   
+at GradedAppControllerTests.t13_showWithUnambiguousNameHasCorrectTextWhenFieldsAreNonNull(GradedAppControllerTests.java:118)  
+  ","[java.lang.NullPointerException]   
+at GradedAppControllerTests.t14_showWithUnambiguousNameHasCorrectCommands(GradedAppControllerTests.java:125)  
+  ","[java.lang.NullPointerException]   
+at GradedAppControllerTests.t15_showWithNoResultsHasCorrectText(GradedAppControllerTests.java:132)  
+  ","[java.lang.NullPointerException]   
+at GradedAppControllerTests.t16_showWithNoResultsHasCorrectText(GradedAppControllerTests.java:139)  
+  ","[java.lang.NullPointerException]   
+at GradedAppControllerTests.t17_showWithManyResultsHasCorrectText(GradedAppControllerTests.java:149)  
+  ","[java.lang.NullPointerException]   
+at GradedAppControllerTests.t18_showWithManyResultsHasCorrectID(GradedAppControllerTests.java:159)  
+  ","Expected: is &#34;xyz&#34;  
+     but: was &#34;&#34;  "
